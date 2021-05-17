@@ -5,7 +5,7 @@ An extension of the [grf-package] to estimate heterogenous effects of instrument
 ## Installation
 The package can be installed from source using ```devtools```:
 ```
-devtools::install_github("phkug/tslsgrf", subdir = "r-package/grftsls")
+devtools::install_github("phkug/grftsls", subdir = "r-package/grftsls")
 ```
 Note that a compiler that implements C++11 is required (clang 3.3 or higher, or g++ 4.8 or higher). If installing on Windows, the [RTools toolchain] is also required.
 
