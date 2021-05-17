@@ -2,6 +2,7 @@
 
 An extension of the [grf-package] to estimate heterogenous effects in instrumental variable models with multiple instruments. 
 
+## Installation
 
 
 
@@ -9,3 +10,6 @@ An extension of the [grf-package] to estimate heterogenous effects in instrument
 
 
 [grf-package]: https://github.com/grf-labs/grf
+
+
+
