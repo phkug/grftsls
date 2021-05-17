@@ -36,12 +36,11 @@ tsls.pred <- predict(tsls.forest, estimate.variance = T)
 ```
 
 ## Literature
-[Biewen, M., & Kugler, P. (2021). Two-stage least squares random forests with an application to Angrist and Evans (1998). Economics Letters, 109893.]
-
-[Biewen, M., Kugler, P., 2020. Two-stage least squares random forests with an application to Angrist and Evans (1998). In: IZA Discussion Paper, (13613). Institute for the Study of Labor (IZA), Bonn.]
-
 [Athey, S., Tibshirani, J., Wager, S., 2019. Generalized random forests. Ann. Statist. 47, 1148–1178.]
 
+[Biewen, M., Kugler, P., 2021. Two-stage least squares random forests with an application to Angrist and Evans (1998). Economics Letters, 109893.]
+
+[Biewen, M., Kugler, P., 2020. Two-stage least squares random forests with an application to Angrist and Evans (1998). In: IZA Discussion Paper, (13613). Institute for the Study of Labor (IZA), Bonn.]
 
 
 
@@ -51,7 +50,7 @@ tsls.pred <- predict(tsls.forest, estimate.variance = T)
 [grf development guide]: https://grf-labs.github.io/grf/DEVELOPING.html
 
 [Biewen, M., Kugler, P., 2020. Two-stage least squares random forests with an application to Angrist and Evans (1998). In: IZA Discussion Paper, (13613). Institute for the Study of Labor (IZA), Bonn.]: https://www.iza.org/publications/dp/13613/two-stage-least-squares-random-forests-with-an-application-to-angrist-and-evans-1998
-[Biewen, M., & Kugler, P. (2021). Two-stage least squares random forests with an application to Angrist and Evans (1998). Economics Letters, 109893.]: https://www.sciencedirect.com/science/article/abs/pii/S0165176521001701
+[Biewen, M., Kugler, P., 2021. Two-stage least squares random forests with an application to Angrist and Evans (1998). Economics Letters, 109893.]: https://www.sciencedirect.com/science/article/abs/pii/S0165176521001701
 [Athey, S., Tibshirani, J., Wager, S., 2019. Generalized random forests. Ann. Statist. 47, 1148–1178.]: https://projecteuclid.org/journals/annals-of-statistics/volume-47/issue-2/Generalized-random-forests/10.1214/18-AOS1709.short
 
 
