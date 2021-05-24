@@ -1,4 +1,57 @@
 #' Two-Stage-Least_Squares forest
+#'
+#' Extends previous codes of the grf-package to an two stage least squares forest 
+#'
+#' @param X The covariates used in the instrumental regression.
+#' @param Y The outcome.
+#' @param W The treatment assignment
+#' @param Z The instruments 
+#' @param Y.hat Estimates of the expected responses E[Y | Xi], marginalizing
+#'              over treatment. If Y.hat = NULL, these are estimated using
+#'              a separate regression forest. Default is 0
+#' @param W.hat Estimates of the treatment propensities E[W | Xi]. If W.hat = NULL,
+#'              these are estimated using a separate regression forest. Default is 0
+#' @param Z.hat Estimates of the instrument propensities E[Z | Xi]. If Z.hat = NULL,
+#'              these are estimated using a separate regression forest. Default is 0
+#' @param num.trees Number of trees grown in the forest. Note: Getting accurate
+#'                  confidence intervals generally requires more trees than
+#'                  getting accurate predictions. Default is 2000.
+#' @param sample.weights Not used
+#' @param clusters Not used
+#' @param sample.fraction Fraction of the data used to build each tree.
+#'                        Note: If honesty = TRUE, these subsamples will
+#'                        further be cut by a factor of honesty.fraction. Default is 0.5.
+#' @param mtry Number of variables tried for each split. Default is
+#'             \eqn{\sqrt p + 20} where p is the number of variables.
+#' @param min.node.size A target for the minimum number of observations in each tree leaf. Note that nodes
+#'                      with size smaller than min.node.size can occur, as in the original randomForest package.
+#'                      Default is 5.
+#' @param honesty Whether to use honest splitting (i.e., sub-sample splitting). Default is TRUE.
+#'  For a detailed description of honesty, honesty.fraction, and recommendations for
+#'  parameter tuning, see the grf algorithm reference.
+#' @param honesty.fraction The fraction of data that will be used for determining splits if honesty = TRUE. Corresponds
+#'                         to set J1 in the notation of the paper. Default is 0.5 (i.e. half of the data is used for
+#'                         determining splits).
+#' @param alpha A tuning parameter that controls the maximum imbalance of a split. Default is 0.05.
+#' @param imbalance.penalty A tuning parameter that controls how harshly imbalanced splits are penalized. Default is 0.
+#' @param ci.group.size The forst will grow ci.group.size trees on each subsample.
+#'                      In order to provide confidence intervals, ci.group.size must
+#'                      be at least 2. Default is 2.
+#' @param reduced.form.weight Whether splits should be regularized towards a naive
+#'                            splitting criterion that ignores the instrument (and
+#'                            instead emulates a causal forest).
+#' @param tune.parameters If TRUE, min.node.size, sample.fraction, mtry, alpha = validate_alpha(alpha) and imbalance.penalty are tuned
+#' @param tune.num.trees The number of trees in each 'mini forest' used to fit the tuning model. Default is 200.
+#' @param tune.num.reps The number of forests used to fit the tuning model. Default is 50.
+#' @param tune.num.draws The number of random parameter values considered when using the model
+#'                          to select the optimal parameters. Default is 1000.
+#' @param compute.oob.predictions Whether OOB predictions on training set should be precomputed. Default is TRUE.
+#' @param num.threads Number of threads used in training. By default, the number of threads is set
+#'                    to the maximum hardware concurrency.
+#' @param seed The seed of the C++ random number generator.
+#'
+#' @return A trained two stage least squares forest object.
+#'
 #' @export
 #' @useDynLib grftsls
 #' @importFrom Rcpp evalCpp
