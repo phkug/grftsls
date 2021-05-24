@@ -40,11 +40,11 @@
 #' @param reduced.form.weight Whether splits should be regularized towards a naive
 #'                            splitting criterion that ignores the instrument (and
 #'                            instead emulates a causal forest).
-#' @param tune.parameters If TRUE, min.node.size, sample.fraction, mtry, alpha = validate_alpha(alpha) and imbalance.penalty are tuned
-#' @param tune.num.trees The number of trees in each 'mini forest' used to fit the tuning model. Default is 200.
-#' @param tune.num.reps The number of forests used to fit the tuning model. Default is 50.
+#' @param tune.parameters If TRUE, all paramters that are NULL are tuned.
+#' @param tune.num.trees The number of trees in each 'mini forest' used to fit the tuning model.
+#' @param tune.num.reps The number of forests used to fit the tuning model.
 #' @param tune.num.draws The number of random parameter values considered when using the model
-#'                          to select the optimal parameters. Default is 1000.
+#'                          to select the optimal parameters. 
 #' @param compute.oob.predictions Whether OOB predictions on training set should be precomputed. Default is TRUE.
 #' @param num.threads Number of threads used in training. By default, the number of threads is set
 #'                    to the maximum hardware concurrency.
@@ -58,9 +58,9 @@
 #' 
 
 tsls_forest <- function(X, Y, W, Z,
-                        Y.hat = 0,
-                        W.hat = 0,
-                        Z.hat = 0,
+                        Y.hat,
+                        W.hat,
+                        Z.hat,
                         sample.fraction = NULL,
                         mtry = NULL,
                         num.trees = 2000,
