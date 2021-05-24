@@ -1,6 +1,6 @@
 #' Two-Stage-Least_Squares forest
 #'
-#' Extends previous codes of the grf-package to an two stage least squares forest 
+#' Extends previous codes of the grf-package to a two-stage least squares forest 
 #'
 #' @param X The covariates used in the instrumental regression.
 #' @param Y The outcome.
