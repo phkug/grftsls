@@ -102,7 +102,7 @@ to the maximum hardware concurrency.}
 to select the optimal parameters.}
 }
 \value{
-A trained two stage least squares forest object.
+A trained two-stage least squares forest object.
 }
 \description{
 Extends previous codes of the grf-package to a two-stage least squares forest
