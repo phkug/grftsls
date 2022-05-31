@@ -244,7 +244,7 @@ predict.tsls_forest <- function(object, newdata = NULL,
 
   outcome.index = ncol(X) + 1
   treatment.index <- ncol(X) + 2
-  instrument.index <- seq(from = ncol(X) + 3, to = ncol(X) + 3 + ncol(Z)-1 ,by = 1)
+  instrument.index <- seq(from = ncol(X) + 3, to = ncol(X) + 3 + ncol(Z.centered)-1 ,by = 1)
 
   if (!is.null(newdata) ) {
     validate_newdata(newdata, object$X.orig)
